@@ -4,4 +4,13 @@ version: 1.0.0
 extensions:
   - id: terrain-switch
     type: widget
-    name: Test
+    name: terrain toggle
+    schema:
+      groups:
+        - id: ui
+          title: ui
+          fields:
+            - id: color
+              title: color
+              type: string
+              ui: color
