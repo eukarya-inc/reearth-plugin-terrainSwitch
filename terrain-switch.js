@@ -49,7 +49,7 @@ addEventListener("message", e => {
   reearth = e.source.reearth;
 
   const uiColor = document.getElementById("switch-button");
-  if(property.ui.color && property.ui) {
+  if(property.ui) {
     uiColor.style.color = property.ui.color;
 
   } else {
