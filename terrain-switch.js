@@ -49,8 +49,7 @@ addEventListener("message", e => {
   reearth = e.source.reearth;
 
   const uiColor = document.getElementById("switch-button");
-  console.log(property.ui.color);
-  if(property.ui.color) {
+  if(property.ui.color && property.ui) {
     uiColor.style.color = property.ui.color;
 
   } else {
@@ -65,7 +64,6 @@ addEventListener("message", e => {
 
 reearth.on("message", (msg) => {
   if (msg.type == "terrain") {
-    console.log(msg);
     if (reearth.scene.property.default.terrain == true) {
       reearth.scene.overrideProperty({ default: { terrain: false } });
     } else {
