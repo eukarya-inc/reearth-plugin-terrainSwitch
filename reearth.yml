@@ -1,6 +1,6 @@
 id: terrain-switch-plugin
 name: terrain switch plugin
-version: 1.0.0
+version: 1.0.1
 extensions:
   - id: terrain-switch
     type: widget
