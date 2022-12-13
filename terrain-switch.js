@@ -1,10 +1,15 @@
 const html = `
 <style>
+  html, body {
+   margin: 0;
+   width:94px;
+   height:56px;
+  }
   .wrapper {
   }
   
   button {
-    width:94px;
+    width:100%;
     height:56px;
     display:flex;
     align-items: center;
@@ -46,7 +51,6 @@ document.getElementById("switch-button").addEventListener("click", (e)=>{
 addEventListener("message", e => {
   if (e.source !== parent) return;
   property = e.data.property;
-  reearth = e.source.reearth;
 
   const uiColor = document.getElementById("switch-button");
   if(property.ui) {
@@ -64,10 +68,10 @@ addEventListener("message", e => {
 
 reearth.on("message", (msg) => {
   if (msg.type == "terrain") {
-    if (reearth.scene.property.default.terrain == true) {
-      reearth.scene.overrideProperty({ default: { terrain: false } });
+    if (reearth.scene.property.terrain.terrain == true) {
+      reearth.scene.overrideProperty({ terrain: { terrain: false } });
     } else {
-      reearth.scene.overrideProperty({ default: { terrain: true } });
+      reearth.scene.overrideProperty({ terrain: { terrain: true } });
     }
   }
 });
