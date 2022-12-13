@@ -68,10 +68,13 @@ addEventListener("message", e => {
 
 reearth.on("message", (msg) => {
   if (msg.type == "terrain") {
-    if (reearth.scene.property.terrain.terrain == true) {
-      reearth.scene.overrideProperty({ terrain: { terrain: false } });
-    } else {
+    if (
+      !reearth.scene.property.terrain ||
+      reearth.scene.property.terrain.terrain == false
+    ) {
       reearth.scene.overrideProperty({ terrain: { terrain: true } });
+    } else {
+      reearth.scene.overrideProperty({ terrain: { terrain: false } });
     }
   }
 });
